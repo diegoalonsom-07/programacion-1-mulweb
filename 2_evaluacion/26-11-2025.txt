@@ -1,0 +1,49 @@
+static int ejercicio2 (int a, int b){				| 
+	auxiliar = b;						|
+	if (a > 0 && b > 0){					|
+		if (b==0){					|
+			return a;				|
+		} else {					|
+			return a * ejercicio2(a, b-1);		|
+	}else{							|
+		return 0;					|
+	}							|
+}								|
+-------------------------------------------------------------------------------------------------------------------
+static int ejercicio3 (int n){
+	int auxiliar = 0;
+	if (n>0){
+		if (n<10){
+			return n;
+		} else {
+			return (n%10)*10 + ejercicio3 (n/10);
+		}
+	}else{
+		return -1;
+	}
+}
+-------------------------------------------------------------------------------------------------------------------
+static boolean ejercicio4(int n) {
+	
+    	if (n == 0 || n == 1) {
+        	return true;
+    	}else if (n%10 > 1){
+		return false;
+	}else{
+		ejercicio4(n/10);
+	}
+}
+-------------------------------------------------------------------------------------------------------------------
+static int ejercicio5 (int n) {
+	
+    	if (n == 1) {
+        	return n;
+	}else{
+		return (n%10) + 10 * ejercicio5(n/2);
+	}
+}
+-------------------------------------------------------------------------------------------------------------------
+static boolean ejercicio6 (String palabra){
+	
+	if ()
+}
