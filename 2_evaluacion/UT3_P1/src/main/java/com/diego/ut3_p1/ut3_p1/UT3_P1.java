@@ -135,7 +135,7 @@ public class UT3_P1 {
                     break;
             }
         } catch (Exception e) {
-            System.out.println("Error: Debes ingresar un número entero.");
+            System.out.println("Error: Debes ingresar lo que se te pide");
             System.out.println();
             menu();
         } finally {
@@ -477,7 +477,7 @@ public class UT3_P1 {
             }
 
         } catch (Exception e) {
-            System.out.println("Error: Debes ingresar un número entero.");
+            System.out.println("Error: Debes ingresar un carácter válido.");
             System.out.println();
             ejercicio5();
         }
