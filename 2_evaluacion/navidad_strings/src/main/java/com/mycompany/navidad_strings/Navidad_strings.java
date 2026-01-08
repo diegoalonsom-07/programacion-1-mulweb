@@ -8,6 +8,7 @@
 
 package com.mycompany.navidad_strings;
 
+import java.time.Year;
 import java.util.Scanner;
 
 /**
@@ -96,27 +97,27 @@ public class Navidad_strings {
                 break;
 
             case "10":
-                // palabra_mas_larga();
+                palabra_mas_larga();
                 break;
 
             case "11":
-                // cambiar_mayus_minus();
+                cambiar_mayus_minus();
                 break;
 
             case "12":
-                // letra_mas_repetida();
+                letra_mas_repetida();
                 break;
 
             case "13":
-                // juego_contraseña();
+                juego_contraseña();
                 break;
 
             case "14":
-                // contar_espacios();
+                contar_espacios();
                 break;
 
             case "15":
-                // nombre_sin_vocales();
+                nombre_sin_vocales();
                 break;
 
             case "16":
@@ -355,6 +356,181 @@ public class Navidad_strings {
     }
 
     static void mensaje_personalizado(){
-        
+        String nombre;
+        String apellidos;
+        String ciudad;
+        int anioNacimiento;
+        int anioActual = Year.now().getValue();
+        int edad;
+        String mensaje;
+
+        System.out.print("Introduce tu nombre: ");
+        nombre = sc.nextLine();
+
+        System.out.print("Introduce tus apellidos: ");
+        apellidos = sc.nextLine();
+
+        System.out.print("Introduce tu año de nacimiento: ");
+        anioNacimiento = sc.nextInt();
+        edad = anioActual - anioNacimiento;
+        sc.nextLine();
+
+        System.out.print("Introduce tu ciudad de residencia: ");
+        ciudad = sc.nextLine();
+
+        mensaje = "Hola " + nombre + " " + apellidos + ". Ya se que tienes " + edad + " años y que vives en " + ciudad + ".";
+
+        System.out.println(mensaje);
+    }
+
+    static void palabra_mas_larga(){
+        String palabraLarga = "";
+        String palabraActual;
+        int contador;
+
+        System.out.println("Introduce 10 palabras:");
+
+        for (contador = 1; contador <= 10; contador++) {
+            System.out.print("Palabra " + contador + ": ");
+            palabraActual = sc.nextLine();
+
+            if (palabraActual.length() > palabraLarga.length()) {
+                palabraLarga = palabraActual;
+            }
+        }
+
+        System.out.println("La palabra más larga introducida es: " + palabraLarga);
+    }
+
+    static void cambiar_mayus_minus(){
+        String resultado = "";
+        int contador;
+        int contadorCambios = 0;
+
+        System.out.println("Introduce una línea de texto:");
+        String entrada = sc.nextLine();
+
+        for (contador = 0; contador < entrada.length(); contador++) {
+            char caracterActual = entrada.charAt(contador);
+
+            if (Character.isUpperCase(caracterActual)) {
+                resultado += Character.toLowerCase(caracterActual);
+                contadorCambios++;
+
+            } else if (Character.isLowerCase(caracterActual)) {
+                resultado += Character.toUpperCase(caracterActual);
+                contadorCambios++;
+
+            } else {
+                resultado += caracterActual;
+            }
+        }
+
+        System.out.println("Texto transformado: " + resultado);
+        System.out.println("Número de cambios realizados: " + contadorCambios);
+    }
+
+    static void letra_mas_repetida(){
+        String frase;
+        char letraMasFrecuente = ' ';
+        int maxApariciones = 0;
+        int contador;
+        char letra;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|   Me vas a pasar una frase y te diré cuál es la letra que más   |");
+        System.out.println("|                  se repite en dicha frase.                      |");
+        System.out.println("|_________________________________________________________________|");
+
+        System.out.println("Introduce una frase:");
+        frase = sc.nextLine().toLowerCase();
+
+        letraMasFrecuente = ' ';
+        maxApariciones = 0;
+
+        for (letra = 'a'; letra <= 'z'; letra++) {
+            int contadorActual = 0;
+
+            // Para cada letra del alfabeto, recorremos la frase
+            for (contador = 0; contador < frase.length(); contador++) {
+                if (frase.charAt(contador) == letra) {
+                    contadorActual++;
+                }
+            }
+
+            // Si esta letra aparece más veces que la máxima registrada hasta ahora
+            if (contadorActual > maxApariciones) {
+                maxApariciones = contadorActual;
+                letraMasFrecuente = letra;
+            }
+        }
+
+        if (maxApariciones > 0) {
+            System.out.println("La letra que más aparece es: '" + letraMasFrecuente + "'");
+            System.out.println("Aparece un total de: " + maxApariciones + " veces.");
+        } else {
+            System.out.println("No se encontraron letras del alfabeto en la frase.");
+        }
+    }
+
+    static void juego_contraseña(){
+        System.out.println("No tengo ni idea de cómo hacer este ejercicio.");
+    }
+    
+    static void contar_espacios(){
+        String frase;
+        int contadorEspacios = 0;
+        int contador;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|     Me vas a pasar una frase y te diré cuántos espacios en      |");
+        System.out.println("|                          blanco tiene.                          |");
+        System.out.println("|_________________________________________________________________|");
+
+        System.out.println("Introduce una frase:");
+        frase = sc.nextLine();
+
+        contadorEspacios = 0;
+
+        // Recorremos la frase carácter por carácter
+        for (contador = 0; contador < frase.length(); contador++) {
+            // Comprobamos si el carácter en la posición i es un espacio
+            if (frase.charAt(contador) == ' ') {
+                contadorEspacios++;
+            }
+        }
+
+        // Mostramos el resultado
+        System.out.println("La frase tiene " + contadorEspacios + " espacios en blanco.");
+    }
+
+    static void nombre_sin_vocales(){
+        String nombreCompleto = "";
+        String sinVocales = "";
+        String vocales = "aeiouáéíóúü";
+        char caracterActual = ' ';
+        char caracterMinuscula = ' ';
+        int contador = 0;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|   Me vas a pasar un nombre y te lo devolveré sin las vocales    |");
+        System.out.println("|_________________________________________________________________|");
+
+        System.out.print("Introduce tu nombre completo: ");
+        nombreCompleto = sc.nextLine();
+
+        for (contador = 0; contador < nombreCompleto.length(); contador++) {
+            caracterActual = nombreCompleto.charAt(contador);
+            caracterMinuscula = Character.toLowerCase(caracterActual);
+
+            if (vocales.indexOf(caracterMinuscula) == -1) {
+                sinVocales += caracterActual;
+            }
+        }
+
+        System.out.println("Resultado: " + sinVocales);
     }
 }
