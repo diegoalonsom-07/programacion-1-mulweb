@@ -21,7 +21,10 @@ public class Navidad_strings {
     public static void main(String[] args) {
         menu();
     }
-
+    /**
+     * Muestra el menú principal por consola y gestiona la selección del usuario
+     * mediante una estructura switch.
+     */
     static void menu() {
 
         sc = new Scanner(System.in);
@@ -154,6 +157,10 @@ public class Navidad_strings {
 
     }
 
+    /**
+     * Ejercicio 1: Formatea un nombre propio.
+     * Convierte la primera letra a mayúscula y el resto a minúscula.
+     */
     static void cambiar_nombre() {
         String nombre;
         char primera;
@@ -176,6 +183,10 @@ public class Navidad_strings {
         System.out.println("El nombre bien escrito es: " + primera + resto);
     }
 
+    /**
+     * Ejercicio 2: Separa los caracteres de una palabra.
+     * Recorre la cadena y muestra cada letra seguida de un espacio en blanco.
+     */
     static void separar_letras() {
         String palabra;
         char letra;
@@ -199,6 +210,10 @@ public class Navidad_strings {
         }
     }
 
+    /**
+     * Ejercicio 3: Genera un triángulo progresivo.
+     * Muestra subcadenas de la palabra introducida, añadiendo una letra en cada línea.
+     */
     static void triangulo_letras() {
         String palabra;
         String auxiliar;
@@ -207,8 +222,8 @@ public class Navidad_strings {
 
         System.out.println(" _________________________________________________________________");
         System.out.println("|                                                                 |");
-        System.out.println("|        Me vas a pasar una palabra y te la escribiré con         |");
-        System.out.println("|           las letras separadas por espacios en blanco           |");
+        System.out.println("|      Me vas a pasar una palabra y te mostraré un triángulo      |");
+        System.out.println("|          con las letras de dicha palabra.                       |");
         System.out.println("|_________________________________________________________________|");
         System.out.print("Escribe una palabra: ");
 
@@ -224,6 +239,10 @@ public class Navidad_strings {
 
     }
 
+    /**
+     * Ejercicio 4: Realiza un conteo de palabras y letras.
+     * Basándose en los espacios en blanco, estima el número de palabras y cuenta el total de caracteres.
+     */
     static void conteo() {
         String frase;
         int palabras = 1;
@@ -254,6 +273,10 @@ public class Navidad_strings {
 
     }
 
+    /**
+     * Ejercicio 5: Valida una hora en formato HH:MM.
+     * Comprueba que el formato sea correcto y que las horas (0-23) y minutos (0-59) sean válidos.
+     */
     static void validar_hora() {
         String hora;
         int hh;
@@ -283,6 +306,10 @@ public class Navidad_strings {
         }
     }
     
+    /**
+     * Ejercicio 6: Comprueba si una palabra es un palíndromo.
+     * Compara la palabra original con su versión invertida usando {@link StringBuilder#reverse()}.
+     */
     static void es_palindromo(){
         System.out.println(" _________________________________________________________________");
         System.out.println("|                                                                 |");
@@ -292,16 +319,12 @@ public class Navidad_strings {
         System.out.print("Dime la palabra: ");
         String palabra = sc.next();
 
-        // El enunciado pide usar arrays: toCharArray() convierte la cadena en un array de caracteres
         char[] arrayCadenas = palabra.toLowerCase().toCharArray();
         
-        // Creamos el String procesado desde el array
         String original = String.valueOf(arrayCadenas);
         
-        // El enunciado pide usar StringBuilder(original).reverse().toString()
         String invertida = new StringBuilder(original).reverse().toString();
 
-        // Comparación simple
         if (original.equals(invertida)) {
             System.out.println("Es palíndromo");
         } else {
@@ -309,21 +332,26 @@ public class Navidad_strings {
         }
     }
 
+    /**
+     * Ejercicio 7: Verifica si la cadena contiene solo letras.
+     * Utiliza el método {@link Character#isLetter(char)} para validar cada carácter.
+     */
     static void solo_letras(){
         String palabra;
         char c;
+        int contador;
         boolean soloLetras = true;
 
         System.out.println(" _________________________________________________________________");
         System.out.println("|                                                                 |");
-        System.out.println("|  Me vas a pasar una palabra y te diré si solo contiene letras  |");
+        System.out.println("|  Me vas a pasar una palabra y te diré si solo contiene letras   |");
         System.out.println("|_________________________________________________________________|");
 
         System.out.print("Escribe una palabra: ");
         palabra = sc.nextLine();
 
-        for (int i = 0; i < palabra.length(); i++) {
-            c = palabra.charAt(i);
+        for (contador = 0; contador < palabra.length(); contador++) {
+            c = palabra.charAt(contador);
             if (!Character.isLetter(c)) {
                 soloLetras = false;
                 break;
@@ -337,14 +365,18 @@ public class Navidad_strings {
         }
     }
 
+    /**
+     * Ejercicio 8: Elimina todos los espacios en blanco.
+     * Utiliza el método {@code replace(" ", "")} para limpiar la cadena.
+     */
     static void eliminar_espacios(){
         String frase;
         String fraseSinEspacios;
 
         System.out.println(" _________________________________________________________________");
         System.out.println("|                                                                 |");
-        System.out.println("|  Me vas a pasar una frase y te la devolveré sin espacios en    |");
-        System.out.println("|                           blanco.                              |");
+        System.out.println("|  Me vas a pasar una frase y te la devolveré sin espacios en     |");
+        System.out.println("|                           blanco.                               |");
         System.out.println("|_________________________________________________________________|");
 
         System.out.print("Escribe una frase: ");
@@ -355,6 +387,10 @@ public class Navidad_strings {
         System.out.println("Frase sin espacios: " + fraseSinEspacios);
     }
 
+    /**
+     * Ejercicio 9: Genera un mensaje personalizado.
+     * Calcula la edad del usuario basándose en el año actual y formatea una respuesta con sus datos.
+     */
     static void mensaje_personalizado(){
         String nombre;
         String apellidos;
@@ -363,6 +399,12 @@ public class Navidad_strings {
         int anioActual = Year.now().getValue();
         int edad;
         String mensaje;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|  Te pediré algunos datos personales y te mostraré un mensaje    |");
+        System.out.println("|          personalizado con la información que me des.           |");
+        System.out.println("|_________________________________________________________________|");
 
         System.out.print("Introduce tu nombre: ");
         nombre = sc.nextLine();
@@ -383,12 +425,21 @@ public class Navidad_strings {
         System.out.println(mensaje);
     }
 
+    /**
+     * Ejercicio 10: Encuentra la palabra más larga.
+     * Solicita 10 palabras al usuario y determina cuál tiene la mayor longitud.
+     */
     static void palabra_mas_larga(){
         String palabraLarga = "";
         String palabraActual;
         int contador;
 
-        System.out.println("Introduce 10 palabras:");
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|   Te pediré que introduzcas 10 palabras y te diré cuál es la    |");
+        System.out.println("|                  más larga de todas ellas.                      |");
+        System.out.println("|_________________________________________________________________|");
+        System.out.println("Introduce las palabras:");
 
         for (contador = 1; contador <= 10; contador++) {
             System.out.print("Palabra " + contador + ": ");
@@ -402,11 +453,21 @@ public class Navidad_strings {
         System.out.println("La palabra más larga introducida es: " + palabraLarga);
     }
 
+    /**
+     * Ejercicio 11: Invierte mayúsculas y minúsculas.
+     * Cambia cada carácter a su opuesto (mayúscula a minúscula y viceversa) y cuenta los cambios realizados.
+     */
     static void cambiar_mayus_minus(){
         String resultado = "";
         int contador;
         int contadorCambios = 0;
 
+        System.out.println(" _______________________________________________________________________");
+        System.out.println("|                                                                       |");
+        System.out.println("|      Me vas a pasar una línea de texto y te la devolveré con las      |");
+        System.out.println("|   mayúsculas convertidas a minúsculas y las minúsculas a mayúsculas.  |");
+        System.out.println("|          Además, te diré cuántos cambios he realizado.                |");
+        System.out.println("|_______________________________________________________________________|");
         System.out.println("Introduce una línea de texto:");
         String entrada = sc.nextLine();
 
@@ -430,6 +491,10 @@ public class Navidad_strings {
         System.out.println("Número de cambios realizados: " + contadorCambios);
     }
 
+    /**
+     * Ejercicio 12: Identifica el carácter más frecuente.
+     * Analiza la frecuencia de cada letra del abecedario dentro de una frase.
+     */
     static void letra_mas_repetida(){
         String frase;
         char letraMasFrecuente = ' ';
@@ -452,14 +517,12 @@ public class Navidad_strings {
         for (letra = 'a'; letra <= 'z'; letra++) {
             int contadorActual = 0;
 
-            // Para cada letra del alfabeto, recorremos la frase
             for (contador = 0; contador < frase.length(); contador++) {
                 if (frase.charAt(contador) == letra) {
                     contadorActual++;
                 }
             }
 
-            // Si esta letra aparece más veces que la máxima registrada hasta ahora
             if (contadorActual > maxApariciones) {
                 maxApariciones = contadorActual;
                 letraMasFrecuente = letra;
@@ -477,7 +540,11 @@ public class Navidad_strings {
     static void juego_contraseña(){
         System.out.println("No tengo ni idea de cómo hacer este ejercicio.");
     }
-    
+
+    /**
+     * Ejercicio 14: Cuenta los espacios en blanco.
+     * Recorre la frase y suma las ocurrencias del carácter ' '.
+     */
     static void contar_espacios(){
         String frase;
         int contadorEspacios = 0;
@@ -494,20 +561,21 @@ public class Navidad_strings {
 
         contadorEspacios = 0;
 
-        // Recorremos la frase carácter por carácter
         for (contador = 0; contador < frase.length(); contador++) {
-            // Comprobamos si el carácter en la posición i es un espacio
             if (frase.charAt(contador) == ' ') {
                 contadorEspacios++;
             }
         }
 
-        // Mostramos el resultado
         System.out.println("La frase tiene " + contadorEspacios + " espacios en blanco.");
     }
 
+    /**
+     * Ejercicio 15: Filtra vocales.
+     * Crea una nueva cadena omitiendo cualquier carácter que sea una vocal (incluyendo tildes y diéresis).
+     */
     static void nombre_sin_vocales(){
-        String nombreCompleto = "";
+        String nombreCompleto;
         String sinVocales = "";
         String vocales = "aeiouáéíóúü";
         char caracterActual = ' ';
