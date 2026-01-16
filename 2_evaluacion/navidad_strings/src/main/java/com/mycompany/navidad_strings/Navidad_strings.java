@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author diego
  */
 public class Navidad_strings {
-    static Scanner sc = null;
+     static Scanner sc = null;
 
     public static void main(String[] args) {
         menu();

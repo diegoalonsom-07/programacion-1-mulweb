@@ -1,0 +1,26 @@
+int [] num = new int [8];
+String [] imparPar = new String [8];
+
+for (int contador = 0; contador < num.lenth(); contador++){
+	num[contador] = sc.nextInt();
+	
+	if (num[contador] %2 == 0){
+		imparPar[contador]="Par";
+	} else {
+		imparPar[contador]="Imar";
+	}
+}
+
+|===============================================================|
+
+int [] num = new int [15];
+
+for (int contador = 0; contador < 15; contador++){
+	while (num[contador] < 500){
+		num[contador] = sc.nextInt();
+	}
+}
+
+|===============================================================|
+
+
