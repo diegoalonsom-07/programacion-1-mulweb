@@ -22,6 +22,7 @@ public class EjerciciosArrays {
         System.out.println("|                                                                 |");
         System.out.println("|   1.- Ejercicio 1                                               |");
         System.out.println("|   2.- Ejercicio 2                                               |");
+        System.out.println("|   3.- Ejercicio 3                                               |");
         System.out.println("|   0.- Salir                                                     |");
         System.out.println("|_________________________________________________________________|");
         System.out.println("|                                                                 |");
@@ -50,6 +51,10 @@ public class EjerciciosArrays {
                 ejercico2(num2);
                 menu();
                 break;
+            case "3":
+                    ejercicio3();
+                    menu();
+                    break;
             case "0":
                 System.out.println("Saliendo...");
                 break;
@@ -72,4 +77,21 @@ public class EjerciciosArrays {
         System.out.println("El array esta ordenado");
         return true;
     }
+
+    static void ejercicio3(){
+	String [] frase = new String[5];
+	String larga = "";
+
+	for (int i = 0; i < frase.length; i++) {
+		System.out.println("Introduce una palabra: ");
+		frase[i] = sc.nextLine();
+	}
+
+	for (int i = 0; i < frase.length - 1; i++) {
+		if (frase[i].length() > frase[i + 1].length()) {
+			larga = frase[i];
+		}
+	}
+    System.out.println("La frase mas larga es: " + larga);
+}
 }

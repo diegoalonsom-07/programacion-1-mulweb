@@ -23,4 +23,21 @@ for (int contador = 0; contador < 15; contador++){
 
 |===============================================================|
 
+static void ejercicio3(){
+	String [] frase = new String[5];
+	String larga;
 
+	for (int i = 0; i < frase.length; i++) {
+		System.out.println("Introduce una palabra: ");
+		frase[i] = sc.nextLine();
+	}
+
+	for (int i = 0; i < frase.length; i++) {
+		if (frase[i].lenth() > frase[i + 1].lenth()) {
+			larga = frase[i];
+		} else {
+			larga = frase[i+1];
+		}
+	}
+	System.out.println("La frase mas larga es: " larga);
+}
