@@ -24,6 +24,11 @@ public class ahorcado {
 
     }
     
+    /**
+     * Muestra el menú principal y devuelve la palabra con la que se va a jugar.
+     * Permite elegir entre modo manual, automático o salir del programa.
+     * @return La palabra seleccionada para el juego.
+     */
     static String modoJuego(){
         String opcion = "";
         System.out.println(" ______________________________________________");
@@ -62,7 +67,13 @@ public class ahorcado {
 
     }
 
+    /**
+     * Modo de juego para dos jugadores. Solicita por consola la palabra secreta.
+     * Imprime saltos de línea para ocultar la palabra al segundo jugador.
+     * @return La palabra introducida por el usuario.
+     */
     static String modoJugadores(){
+        String palabrita;
         System.out.println(" ______________________________________________");
         System.out.println("|                                              |");
         System.out.println("|                   AHORCADO                   |");
@@ -70,9 +81,32 @@ public class ahorcado {
         System.out.println("|                                              |");
         System.out.println("|      INSERTE LA PALABRA CON LA QUE JUGAR     |");
         System.out.println("|______________________________________________|");
-        return sc.nextLine();
+        palabrita = sc.nextLine();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        return palabrita;
     }
 
+    /**
+     * Modo de juego contra la máquina. Selecciona una palabra al azar de un repositorio interno.
+     * El repositorio contiene 15 palabras de diversas temáticas.
+     * @return Una palabra seleccionada aleatoriamente del array interno.
+     */
     static String modoMaquina(){
         String [] palabras;
         palabras = new String [15];
@@ -96,6 +130,11 @@ public class ahorcado {
         return palabras[randomIndex];
     }
 
+    /**
+     * Convierte un String en un array de caracteres (char[]).
+     * @param palabraIni La cadena de texto original.
+     * @return Un array de caracteres con el contenido de la palabra.
+     */
     static char [] convertirArray(String palabraIni){
         char [] palabraSeparada = new char[palabraIni.length()];
         int contador;
@@ -106,6 +145,13 @@ public class ahorcado {
         return palabraSeparada;
     }
 
+    /**
+     * Crea la representación visual "escondida" de la palabra secreta.
+     * Genera un array donde las letras son sustituidas por guiones bajos y 
+     * se insertan comas en las posiciones impares para formato.
+     * @param palabraArray El array de caracteres de la palabra original.
+     * @return Un array de caracteres formateado con '_' y ','.
+     */
     static char [] esconderPalabra(char [] palabraArray){
         char [] palabraEscondida = new char [palabraArray.length + (palabraArray.length -1)];
         int contador;
@@ -120,10 +166,18 @@ public class ahorcado {
         return palabraEscondida;
     }
 
+    /**
+     * Contiene el bucle principal del juego.
+     * Gestiona la entrada de letras, el control de vidas, la actualización de la 
+     * palabra secreta y verifica la condición de victoria.
+     * @param palabraArray Array con la palabra real a adivinar.
+     * @param palabraSecreta Array con el progreso visual del jugador (guiones/letras descubiertas).
+     */
     static void juegoAhorcado(char [] palabraArray, char [] palabraSecreta){
         int vidas = 6;
         String letraIngresada = "";
         boolean letraCorrecta = false;
+        String letrasUsadas = "";
         while (vidas >= 0){
 
             System.out.println();
@@ -131,7 +185,7 @@ public class ahorcado {
             System.out.println();
             System.out.println(" ______________________________________________");
             System.out.println("|                                              |");
-            System.out.println("|        TIENES " + vidas + " VIDAS RESTANTES         |");
+            System.out.println("|           TIENES " + vidas + " VIDAS RESTANTES           |");
             System.out.println("|______________________________________________|");
             System.out.println("|                                              |");
             System.out.println("|             INTRODUCE UNA LETRA:             |");
@@ -139,6 +193,13 @@ public class ahorcado {
 
             letraIngresada = sc.nextLine();
             letraIngresada = letraIngresada.toUpperCase();
+
+            if(letrasUsadas.indexOf(letraIngresada) != -1){
+                System.out.println("Ya has usado esa letra, no te quitare vidas, pero espavila");
+                continue;
+            }
+
+            letrasUsadas += letraIngresada + " ";
 
             letraCorrecta = false;
 
@@ -162,11 +223,13 @@ public class ahorcado {
                 System.exit(0);
             }
         }
-
-
-
     }
-
+    
+    /**
+     * Dibuja en la consola la representación visual del ahorcado según las vidas restantes.
+     * En caso de llegar a 0 vidas, ofrece la opción de reiniciar el juego.
+     * * @param opcion El número de vidas restantes (del 5 al 0).
+     */
     static void muñeco(int opcion){
         String respuesta = "";
         switch (opcion) {
@@ -250,4 +313,5 @@ public class ahorcado {
                 break;
         }
     }
+
 }
