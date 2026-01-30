@@ -90,30 +90,35 @@ public class UT4_P1 {
                     menu();
                     break;
                 case "6":
-                    int [] numeros6;
-                    int [] numeros6or;
-                    
+                    int[] numeros6;
+                    int[] numeros6or;
+
                     numeros6 = pedirArray();
-                    
+
                     numeros6or = ordenarArray(numeros6);
-                    
-                    sinRepetidos(numeros6or);
-                    
-                    
+
+                    int[] arrayLimpio = sinRepetidos(numeros6or);
+
+                    System.out.println("Array ordenado y sin repeticiones:");
+                    for (int contador = 0; contador < arrayLimpio.length; contador++) {
+                        System.out.print(arrayLimpio[contador] + " ");
+                    }
+                    System.out.println();
+
                     menu();
                     break;
                 case "7":
-                    //ejercicio7();
+                    ejercicio7();
                     menu();
                     break;
                 case "8":
-                    //ejercicio8();
+                    ejercicio8();
                     menu();
                     break;
-                case "9":
-                    //ejercicio9();
-                    menu();
-                    break;
+                case "0":
+                case "exit":
+                    System.out.println("HASTA LA PROXIMA");
+                    break; 
                 }
         } catch (Exception e) {
             System.out.println("Error: Debes ingresar lo que se te pide");
@@ -123,6 +128,7 @@ public class UT4_P1 {
             sc.close();
         }
     }
+    
     static void ejercicio1(){
         int contador;
         int[] numeros = new int[10];
@@ -267,7 +273,167 @@ public class UT4_P1 {
         return arrayDesordenado;
     }
     
-    static int [] sinRepetidos (){
+    static int[] sinRepetidos(int[] t) {
+        int[] temporal;
+        int[] resultado;
+        int contadorUnicos = 0;
+        int contador1;
+        int contador2;
+        int numeroActual;
+        boolean esRepetido;
+
+        if (t == null || t.length == 0) {
+            return new int[0];
+        }
+
+        temporal = new int[t.length];
+
+        for (contador1 = 0; contador1 < t.length; contador1++) {
+            numeroActual = t[contador1];
+            esRepetido = false;
+
+            for (contador2 = 0; contador2 < contadorUnicos; contador2++) {
+                if (temporal[contador2] == numeroActual) {
+                    esRepetido = true;
+                    break;
+                }
+            }
+
+            if (!esRepetido) {
+                temporal[contadorUnicos] = numeroActual;
+                contadorUnicos++;
+            }
+        }
+
+        resultado = new int[contadorUnicos];
+
+        for (contador1 = 0; contador1 < contadorUnicos; contador1++) {
+            resultado[contador1] = temporal[contador1];
+        }
+
+        return resultado;
+    }
+    
+    static void ejercicio7() {
+        int[] listaNumeros;
+        int[] nuevaLista;
+        int largoActual;
+        int indiceAzar1;
+        int indiceAzar2;
+        int val1;
+        int val2;
+        int media;
+        int contador1;
+        int contador2;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|                  CALCULO DEL NUMERO DE LA SUERTE                |");
+        System.out.println("|_________________________________________________________________|");
+
+        listaNumeros = pedirArray();
+
+        listaNumeros = ordenarArray(listaNumeros);
+
+        while (listaNumeros.length > 1) {
+            largoActual = listaNumeros.length;
+
+            indiceAzar1 = (int) (Math.random() * largoActual);
+            do {
+                indiceAzar2 = (int) (Math.random() * largoActual);
+            } while (indiceAzar1 == indiceAzar2);
+
+            val1 = listaNumeros[indiceAzar1];
+            val2 = listaNumeros[indiceAzar2];
+            media = (val1 + val2) / 2;
+
+            nuevaLista = new int[largoActual - 1];
+            contador2 = 0; 
+
+            for (contador1 = 0; contador1 < largoActual; contador1++) {
+                if (contador1 != indiceAzar1 && contador1 != indiceAzar2) {
+                    nuevaLista[contador2] = listaNumeros[contador1];
+                    contador2++;
+                }
+            }
+
+            nuevaLista[contador2] = media;
+
+            listaNumeros = nuevaLista;
+
+            listaNumeros = ordenarArray(listaNumeros);
+        }
+
+        System.out.println();
+        System.out.println("===========================================");
+        System.out.println(" TU NUMERO DE LA SUERTE ES: " + listaNumeros[0]);
+        System.out.println("===========================================");
+        System.out.println();
+    }
+    
+    static void ejercicio8() {
+        // 1. Declaración de variables al principio
+        int[] numeros;
+        int i;
+        int numeroNuevo;
+        int posicion;
+
+        System.out.println(" _________________________________________________________________");
+        System.out.println("|                                                                 |");
+        System.out.println("|              INSERTAR NUMERO Y DESPLAZAR A LA DERECHA           |");
+        System.out.println("|_________________________________________________________________|");
+
+        // 2. Generar array de 12 números aleatorios (0-200)
+        numeros = new int[12];
         
+        System.out.println("\n--- Array Original ---");
+        System.out.println("Indice\tValor");
+        for (i = 0; i < numeros.length; i++) {
+            numeros[i] = (int) (Math.random() * 201); // 0 a 200 incluidos
+            System.out.println(i + "\t" + numeros[i]);
+        }
+
+        // 3. Pedir datos al usuario
+        System.out.println("\n-------------------------------------------------------");
+        System.out.print("Introduce el numero que quieres insertar: ");
+        numeroNuevo = sc.nextInt();
+
+        // Validación simple para que la posición sea válida (0-11)
+        do {
+            System.out.print("Introduce la posicion donde quieres insertarlo (0-11): ");
+            posicion = sc.nextInt();
+            if (posicion < 0 || posicion > 11) {
+                System.out.println("Error: La posicion debe estar entre 0 y 11.");
+            }
+        } while (posicion < 0 || posicion > 11);
+
+        // 4. Lógica de DESPLAZAMIENTO a la derecha
+        // Empezamos desde el final (11) y vamos copiando el valor del anterior (i-1)
+        // Paramos justo en la posición donde queremos insertar.
+        for (i = numeros.length - 1; i > posicion; i--) {
+            numeros[i] = numeros[i - 1];
+        }
+
+        // 5. Insertamos el nuevo número en el hueco que hemos dejado
+        numeros[posicion] = numeroNuevo;
+
+        // 6. Mostrar el resultado
+        System.out.println("\n--- Array Modificado (El ultimo se ha perdido) ---");
+        System.out.println("Indice\tValor");
+        for (i = 0; i < numeros.length; i++) {
+            // Marcamos visualmente cual es el nuevo
+            if (i == posicion) {
+                System.out.println(i + "\t" + numeros[i] + " <--- NUEVO");
+            } else {
+                System.out.println(i + "\t" + numeros[i]);
+            }
+        }
+
+        // 7. Respuesta a la pregunta del enunciado
+        System.out.println("\n=======================================================");
+        System.out.println("PREGUNTA: Que habria que hacer para que el ultimo numero no se pierda?");
+        System.out.println("RESPUESTA: Habria que crear un array nuevo con una posicion mas (tamano 13),");
+        System.out.println("           copiar los elementos y luego hacer el desplazamiento.");
+        System.out.println("=======================================================");
     }
 }

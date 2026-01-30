@@ -1,0 +1,41 @@
+int [][] ejercicio1 = new int [3][6];
+ejercicio1 = {{0,30,2,0,0,5},{75,0,0,0,0,0},{0,0,-2,9,0,11}};
+---------------------------------------
+
+static void main (String[]args){
+	int n = 4;
+	int [][] ejercicio2;
+	
+	ejercicio2 = crearMatriz(n);
+
+	imprimirMatriz(ejercicio2);
+
+	imprimirMatrizAl(ejercicio2);
+
+}
+
+static int [][] crearMatriz(int n){
+	int [][] ejercicio2 = new int [n][n];
+	
+	for (int fila=0; fila < ejercicio2.length; fila++){
+		for (int columnas=0; columna < ejercicio2[fila].length; columna++){
+			ejercicio2[fila][columna] = sc.nextInt();
+		}
+	}
+	return ejercicio2
+}
+
+static void imprimirMatriz(int[][] m){
+	for (int[]:fila; m){
+		System.out.println(fila);
+	}
+}
+
+static void imprimirMatrizAl(int[][] m){
+	for (int fila=ejercicio2.length; fila> 0; fila--){
+		for (int columnas=ejercicio2[fila].length; columna > 0; columna--){
+			System.out.print(ejercicio2[fila][columna] + " ");
+		}
+	System.out.println();
+	}
+}
