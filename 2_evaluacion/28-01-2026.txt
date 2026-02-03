@@ -26,16 +26,18 @@ static int [][] crearMatriz(int n){
 }
 
 static void imprimirMatriz(int[][] m){
-	for (int[]:fila; m){
+	for (int[] fila: m){
 		System.out.println(fila);
 	}
 }
 
 static void imprimirMatrizAl(int[][] m){
-	for (int fila=ejercicio2.length; fila> 0; fila--){
+	for (int fila=ejercicio2.length; fila> 0; fila	 ){
 		for (int columnas=ejercicio2[fila].length; columna > 0; columna--){
 			System.out.print(ejercicio2[fila][columna] + " ");
+			fila --;
 		}
 	System.out.println();
 	}
 }
+

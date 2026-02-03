@@ -351,8 +351,7 @@ public class UT4_P1 {
     }
 
     /**
-     * Ejercicio 7: Simula un juego de azar donde se reducen los elementos de un array
-     * calculando medias aleatorias hasta que solo queda un "número de la suerte".
+     * Ejercicio 7: Calculando unas medias de tus numeros favoritos, se saca tu numero de la suerte
      */
     static void ejercicio7() {
         int[] listaNumeros;

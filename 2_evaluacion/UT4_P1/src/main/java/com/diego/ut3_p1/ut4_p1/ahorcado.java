@@ -228,7 +228,7 @@ public class ahorcado {
     /**
      * Dibuja en la consola la representación visual del ahorcado según las vidas restantes.
      * En caso de llegar a 0 vidas, ofrece la opción de reiniciar el juego.
-     * * @param opcion El número de vidas restantes (del 5 al 0).
+     * @param opcion El número de vidas restantes (del 5 al 0).
      */
     static void muñeco(int opcion){
         String respuesta = "";
