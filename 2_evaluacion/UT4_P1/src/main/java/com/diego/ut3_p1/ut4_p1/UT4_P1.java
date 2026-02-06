@@ -1,6 +1,7 @@
 
 package com.diego.ut3_p1.ut4_p1;
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class UT4_P1 {
 
@@ -98,13 +99,12 @@ public class UT4_P1 {
                     break;
                 case "6":
                     int[] numeros6;
-                    int[] numeros6or;
 
                     numeros6 = pedirArray();
 
-                    numeros6or = ordenarArray(numeros6);
+                    Arrays.sort(numeros6);
 
-                    int[] arrayLimpio = sinRepetidos(numeros6or);
+                    int[] arrayLimpio = sinRepetidos(numeros6);
 
                     System.out.println("Array ordenado y sin repeticiones:");
                     for (int contador = 0; contador < arrayLimpio.length; contador++) {

@@ -183,7 +183,7 @@ public class Preparacion_ex {
                     contadorDeVocales();
                     break;
                 case "12":
-                    
+                    fraseInversa();
                     break;
                 case "13":
                     
@@ -338,7 +338,7 @@ public class Preparacion_ex {
         return temperatura;
     }
 
-    static double sumaRecursiva(double numero){
+    static int sumaRecursiva(int numero){
         if (numero == 1) {
             return numero;
         }
@@ -363,13 +363,37 @@ public class Preparacion_ex {
     static void contadorDeVocales(){
         String frase;
         String vocales = "aeiouáéíóúü";
-        System.out.println("Dime una frase y te dire la cantidad de vocales qu tiene");
+        int contador;
+        int contadorVocales = 0;
+        char caracterActual = ' ';
+        char caracterMinuscula = ' ';
+        System.out.println("Dime una frase y te dire la cantidad de vocales que tiene");
         frase = sc.nextLine();
 
-        for(int contador = 0; contador <= frase.length(); contador ++){
-            if (frase.charAt(contador) = )
+        for (contador = 0; contador < frase.length(); contador++) {
+            caracterActual = frase.charAt(contador);
+            caracterMinuscula = Character.toLowerCase(caracterActual);
 
+            if (vocales.indexOf(caracterMinuscula) >= 0) {
+                contadorVocales++;
+            }
         }
-
+        System.out.println(contadorVocales);
     }
+
+    static void fraseInversa(){
+        String frase;
+        String fraseInversa = "";
+        int contador;
+
+        System.out.println("Dime una frase y te la devuelvo al revés");
+        frase = sc.nextLine();
+
+        for (contador = frase.length() - 1; contador >= 0; contador--) {
+            fraseInversa += frase.charAt(contador);
+        }
+        System.out.println(fraseInversa);
+    }
+
+    
 }
