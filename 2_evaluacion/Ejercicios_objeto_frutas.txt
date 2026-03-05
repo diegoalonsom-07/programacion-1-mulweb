@@ -1,0 +1,65 @@
+public class Fruta {
+	private String color = "VERDE";
+	private String sabor;
+	private double peso;
+
+	public Fruta(){
+	}
+	
+	public Fruta(String color, String sabor, double peso){
+		this.color = color;
+		this.sabor = sabor;
+		this.peso = peso;
+	}
+
+	public comer(){
+		System.out.println("ÑAM ÑAM");
+	}
+
+	public madurar(){
+		if (color.equals("VERDE"){
+			color = "MADURA";
+		} else if (color.equals("MADURA"){
+			color = "PASADA";
+		}
+	}
+}
+-------------------------------------------------------------
+public class Manzana extends Fruta {
+	private String tipo;
+
+	public Manzana(String color, String sabor, double peso, String tipo){
+		super(color, sabor, peso);
+		this.tipo = tipo;
+	}
+
+	public void hacerJugo(){
+		System.out.println("GRRRR GRRRRR --> Juguito preparado");
+	}
+}
+------------------------------------------------------------------------------
+public class Platano extends Fruta {
+	private double longitud;
+
+	public Manzana(String color, String sabor, double peso, double longitud){
+		super(color, sabor, peso);
+		this.longitud = longitud;
+	}
+
+	public void pelar(){
+		System.out.println("JUISH JUISH --> Platano pelado");
+	}
+}
+--------------------------------------------------------------------------------
+public class Naranja extends Fruta {
+	private int cantidadGajos;
+
+	public Manzana(String color, String sabor, double peso, int cantidadGajos){
+		super(color, sabor, peso);
+		this.cantidadGajos = cantidadGajos;
+	}
+
+	public void exprimir(){
+		System.out.println("ÑEEEE ÑEEEE --> Exprimido");
+	}
+}

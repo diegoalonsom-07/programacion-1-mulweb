@@ -1,0 +1,49 @@
+public class Estudiante extends Persona{
+	private int creditos;
+	
+	public Estudiante(String nombre, int edad, int creditos){
+		super(nombre, edad);
+		this.creditos = creditos;
+	}
+}
+---------------------------------------------------------------------
+public class Asignatura{
+	private String nombre;
+	private int anio;
+	private int creditos;
+
+	public Asignatura(String nombre, int anio, int creditos){		
+		this.nombre = nombre;
+		this.anio = anio;
+		this.creditos = creditos;
+	}
+	
+	public double getNombre() {
+        	return nombre;
+    	}
+
+	public double getAnio() {
+        	return anio;
+    	}
+
+	public double getCreditos() {
+        	return creditos;
+    	}
+
+	public void setNombre(double nuevoNombre) {
+		this.nombre = nuevoNombre;
+        }
+
+	public void setAnio(double nuevoAnio) {
+		this.anio = nuevoAnio;
+        }
+
+	public void setCreditos(double nuevoCreditos) {
+		this.creditos = nuevoCreditos;
+        }
+}
+
+public class Decano{
+	
+}
+

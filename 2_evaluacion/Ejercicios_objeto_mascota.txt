@@ -1,0 +1,19 @@
+public class Mascota{
+	public Mascota(){
+	}
+}
+------------------------------------
+public class Perro extends Mascota{
+	public Perro(){
+	}
+}
+------------------------------------
+public class Gato extends Mascota{
+	public Perro(){
+	}
+}
+------------------------------------
+public class Tortuga extends Mascota{
+	public Perro(){
+	}
+}

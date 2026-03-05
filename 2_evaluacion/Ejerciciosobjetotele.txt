@@ -1,0 +1,494 @@
+public class Televisor {
+	private int canal = 1;
+	private int volumen = 5;
+
+
+	public Televisor() {
+	}
+
+	public Televisor (int valorCanal) {
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen){
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void setCanal (int valorCanal){
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public void setVolumen (int valorVolumen){
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void getCanal(){
+		System.out.println("Canal: " + canal)
+	}
+
+	public void getVolumen(){
+		System.out.println("Volumen: " + volumen)
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+public class AplicacionTv{
+	public static void main (String[]args){
+		Televisor tv1 = new Televisor();
+
+		Televisor tv2 = new Televisor(10);
+
+		Televisor tv3 = new Televisor(45, 6);
+
+		tv1.setCanal(4);
+
+		tv2.setVolumen(25);
+
+		tv3.getCanal();
+
+		tv3.getVolumen();
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+public class Televisor {
+	private int canal = 1;
+	private int volumen = 5;
+	private int color = 7;
+
+
+	public Televisor() {
+	}
+
+	public Televisor (int valorCanal) {
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen){
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen, int valorColor){
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+
+		color = valorColor;
+	}
+
+	public void setCanal (int valorCanal){
+		if(valorCanal <= 100 && valorCanal < 0)	
+			canal = valorCanal;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public void setVolumen (int valorVolumen){
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+			System.out.println("Canal: " + volumen);
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void subirColor(){
+		color ++;
+	}
+
+	public void bajarColor(){
+		color --;
+	}
+	
+	public void getCanal(){
+		System.out.println("Canal: " + canal);
+	}
+
+	public void getVolumen(){
+		System.out.println("Volumen: " + volumen);
+	}
+
+	public void getColor(){
+		System.out.println("Color: " + color);
+	}
+}
+-------------------------------------------------------------------------------------------------------------------
+public class Televisor {
+	private int canal = 1;
+	private int volumen = 5;
+	private int color = 7;
+
+
+	public Televisor() {
+	}
+
+	public Televisor (int valorCanal) {
+		if(valorCanal <= 10 && valorCanal <= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen){
+		if(valorCanal <= 10 && valorCanal <= 0)
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen <= 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen, int valorColor){
+		if(valorCanal <= 10 && valorCanal <= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+
+		color = valorColor;
+	}
+
+	public void setCanal (int valorCanal){
+		if(valorCanal <= 10 && valorCanal <= 0)
+			canal = valorCanal;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public void setVolumen (int valorVolumen){
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+			System.out.println("Canal: " + volumen);
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void subirCanal(){
+		canal ++;
+		if (canal == 11){
+			canal = 0;
+		}
+	}
+
+	public void bajarCanal(){
+		canal --;
+		if (canal == -1){
+			canal = 10;
+		}
+	}
+
+	public void subirColor(){
+		color ++;
+	}
+
+	public void bajarColor(){
+		color --;
+	}
+	
+	public void getCanal(){
+		System.out.println("Canal: " + canal);
+	}
+
+	public void getVolumen(){
+		System.out.println("Volumen: " + volumen);
+	}
+
+	public void getColor(){
+		System.out.println("Color: " + color);
+	}
+}
+-------------------------------------------------------------------------------------------------------------------
+public class Televisor {
+	private int canal = 1;
+	private int volumen = 5;
+	private int color = 7;
+
+
+	public Televisor() {
+	}
+
+	public Televisor (int valorCanal) {
+		if(valorCanal <= 10 && valorCanal >= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen){
+		if(valorCanal <= 10 && valorCanal >= 0)
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen >= 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen, int valorColor){
+		if(valorCanal <= 10 && valorCanal >= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 100 && valorVolumen > 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+
+		if(valorColor <= 7 && valorColor >= 1)	
+			color = valorColor;
+		}else{
+			Sout("Color invalido");
+		}
+	}
+
+	public void setCanal (int valorCanal){
+		if(valorCanal <= 10 && valorCanal <= 0)
+			canal = valorCanal;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public void setVolumen (int valorVolumen){
+		if(valorVolumen <= 100 && valorVolumen < 0)	
+			volumen = valorVolumen;
+			System.out.println("Canal: " + volumen);
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void subirCanal(){
+		canal ++;
+		if (canal == 11){
+			canal = 0;
+		}
+	}
+
+	public void bajarCanal(){
+		canal --;
+		if (canal == -1){
+			canal = 10;
+		}
+	}
+
+	public void subirColor(){
+		color ++;
+		if (color > 7)
+			color = 7;
+		}
+	}
+
+	public void bajarColor(){
+		color --;
+		if (color < 1)
+			color = 1;
+		}
+	}
+	
+	public void getCanal(){
+		System.out.println("Canal: " + canal);
+	}
+
+	public void getVolumen(){
+		System.out.println("Volumen: " + volumen);
+	}
+
+	public void getColor(){
+		System.out.println("Color: " + color);
+	}
+}
+------------------------------------------------------------------------------------------------------------------
+public class Televisor {
+	private int canal = 1;
+	private int volumen = 5;
+	private int color = 7;
+
+
+	public Televisor() {
+	}
+
+	public Televisor (int valorCanal) {
+		if(valorCanal <= 10 && valorCanal >= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen){
+		if(valorCanal <= 10 && valorCanal >= 0)
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 15 && valorVolumen >= 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public Televisor (int valorCanal, int valorVolumen, int valorColor){
+		if(valorCanal <= 10 && valorCanal >= 0)	
+			canal = valorCanal;
+		}else{
+			Sout("Canal invalido");
+		}
+
+		if(valorVolumen <= 15 && valorVolumen > 0)	
+			volumen = valorVolumen;
+		}else{
+			Sout("Volumen invalido");
+		}
+
+		if(valorColor <= 7 && valorColor >= 1)	
+			color = valorColor;
+		}else{
+			Sout("Color invalido");
+		}
+	}
+
+	public void setCanal (int valorCanal){
+		if(valorCanal <= 10 && valorCanal <= 0)
+			canal = valorCanal;
+			System.out.println("Canal: " + volumen)
+		}else{
+			Sout("Canal invalido");
+		}
+	}
+
+	public void setVolumen (int valorVolumen){
+		if(valorVolumen <= 15 && valorVolumen < 0)	
+			volumen = valorVolumen;
+			System.out.println("Canal: " + volumen);
+		}else{
+			Sout("Volumen invalido");
+		}
+	}
+
+	public void subirCanal(){
+		canal ++;
+		if (canal == 11){
+			canal = 0;
+		}
+	}
+
+	public void bajarCanal(){
+		canal --;
+		if (canal == -1){
+			canal = 10;
+		}
+	}
+
+	public void subirColor(){
+		color ++;
+		if (color > 7)
+			color = 7;
+		}
+	}
+
+	public void bajarColor(){
+		color --;
+		if (color < 1)
+			color = 1;
+		}
+	}
+
+	public void subirVolumen(){
+		volumen ++;
+		if (volumen > 15)
+			color = 15;
+		}
+	}
+
+	public void bajarVolumen(){
+		volumen --;
+		if (volumen < 0)
+			color = 0;
+		}
+	}
+	
+	public void getCanal(){
+		System.out.println("Canal: " + canal);
+	}
+
+	public void getVolumen(){
+		System.out.println("Volumen: " + volumen);
+	}
+
+	public void getColor(){
+		System.out.println("Color: " + color);
+	}
+}
